@@ -1,8 +1,8 @@
 import logging
 
-from bank_process import Bank2Ynab
-from b2y_utilities import get_configs
-from ynab_api import YNAB_API
+from bank2ynab.bank_process import Bank2Ynab
+from bank2ynab.b2y_utilities import get_configs
+from bank2ynab.ynab_api import YNAB_API
 
 # configure our logger
 logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.INFO)

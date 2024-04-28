@@ -23,7 +23,7 @@ import re
 from datetime import datetime
 import logging
 
-import b2y_utilities
+import bank2ynab.b2y_utilities as b2y_utilities
 
 # configure our logger
 logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.INFO)
@@ -334,7 +334,9 @@ def build_bank(bank_config):
     """Factory method loading the correct class for a given configuration."""
     plugin_module = bank_config.get("plugin", None)
     if plugin_module:
-        p_mod = importlib.import_module("plugins.{}".format(plugin_module))
+        p_mod = importlib.import_module(
+            "bank2ynab.plugins.{}".format(plugin_module)
+        )
         if not hasattr(p_mod, "build_bank"):
             s = (
                 "The specified plugin {}.py".format(plugin_module)

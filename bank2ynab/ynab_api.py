@@ -3,7 +3,7 @@ import json
 import configparser
 import logging
 
-import b2y_utilities
+import bank2ynab.b2y_utilities as b2y_utilities
 
 # configure our logger
 logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.INFO)
